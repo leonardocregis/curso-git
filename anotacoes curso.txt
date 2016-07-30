@@ -112,7 +112,14 @@ git branch -t branchdesejado alias/branchdesejado
 git push origin :branchname
 
 
-8 contribuicao com opensource
+8 - contribuicao com opensource(iteragindo com github de outros)
+
+#importando projetos para edicao 
+# ir no github , e executar um fork do projeto, que automaticamente cria uma copia do usuario que requisitou do projeto
+# depois usando a url do projeto vc poderá fazer o git clone 
+git clone [url do seu projeto com fork]
+
+
 
 #usando alias
 vi ~/.gitconfig
