@@ -19,7 +19,7 @@ commandos
 
 Iniciando a criptografia para acessar o github
 - no seu diretorio executar o comando abaixo
-	ss-keygen -t rsa -C "seuemail"
+	ssh-keygen -t rsa -C "seuemail"
 
 #adicionar o arquivo criado para o index no github
 	git add nomearquivo
