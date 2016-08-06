@@ -37,6 +37,10 @@ git config --global user.email "youremail"
 # listar todas as Tags existentes em um projeto
 git tag
 
+
+#verificando a diferenca do que esta comitado como que no repositorio local para ser comitado
+git diff --cached nomedoarquivo
+
 #voltar o repositório para alguma versao
 git checkout v0.1s
 
@@ -49,7 +53,7 @@ git blame nomearquivo
 #copiar o diretorio 
 git clone [https://url]
 
-#---------------------- TRABALHANDO COM REPOSITORIO REMOTO
+---------------------3. Sincronizacao dos dados com o repositorio
 
 #vendo os repositorios remotos existentes
 git remote
@@ -112,7 +116,7 @@ git branch -t branchdesejado alias/branchdesejado
 git push origin :branchname
 
 
-8 - contribuicao com opensource(iteragindo com github de outros)
+-------------------8 - contribuicao com opensource(iteragindo com github de outros)
 
 #importando projetos para edicao 
 # ir no github , e executar um fork do projeto, que automaticamente cria uma copia do usuario que requisitou do projeto
