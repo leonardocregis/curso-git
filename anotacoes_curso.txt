@@ -61,6 +61,9 @@ git remote
 #criando repositorio remoto
 git remote add alias urlrepositorio
 
+#observacao sobre o repositorio remoto, ele segue a seguinte regra de formação: git@github.com:[nomedousuario]/[nomedorepositorio].git
+#deve ser usada essa nomenclatura para termos um repositório identico no github
+
 # enviando alteracoes para o repositorio remoto
 git push alias branchname
 
@@ -96,8 +99,11 @@ git checkout nomedabranch
 # -----------------------TRABALHANDO COM BRANCH REMOTO
 
 #fazendo push de branch 
-#-u diz que o branch devera ser iguao ao do repositorio remoto
-git push -u alias branchneme 
+git push alias branchname
+
+#na criacao da banch pode ser feito o commando abaixo que já aponta para a branch certa, simplificando o push
+#-u diz que o branch devera ser iguao ao do repositorio remoto  , simplifica o push 
+git push -u alias branchname 
 
 #visualizando branch remoto 
 #-a lista tanto remotas como locais
@@ -109,7 +115,7 @@ git checkout -b design
 #deleta localmente a branch
 git branch -d design
 
-#para recuperar o branch remoto para sua maquina local
+#para copiar o branch remoto para sua maquina local
 git branch -t branchdesejado alias/branchdesejado
 
 #deletando uma branch remotas
