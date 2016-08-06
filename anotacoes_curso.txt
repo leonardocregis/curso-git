@@ -121,6 +121,8 @@ git branch -t branchdesejado alias/branchdesejado
 #deletando uma branch remotas
 git push origin :branchname
 
+#trocando de branch
+git checkout branchname
 
 -------------------8 - contribuicao com opensource(iteragindo com github de outros)
 
