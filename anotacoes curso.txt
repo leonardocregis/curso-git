@@ -10,7 +10,7 @@ ss-keygen -t rsa -C "seuemail"
 #iniciar um repositorio git , ele trabalha com o diretorio currente como se fosse um repositorio, tudo feito no mesmo será alterado
 git init
 
-#lista os arquivos gerenciados pelo git
+#lista os arquivos gerenciados pelo git e que pertencem ao diretorio
 git ls-files
 
 #comando que adiciona o arquivo para ser rastreado pelo git
