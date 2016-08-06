@@ -35,23 +35,23 @@ git config --global user.name "yourname"
 git config --global user.email "youremail"
 
 # listar todas as Tags existentes em um projeto
-git tag
+	git tag
 
 
 #verificando a diferenca do que esta comitado como que no repositorio local para ser comitado
 git diff --cached nomedoarquivo
 
 #voltar o repositório para alguma versao
-git checkout v0.1s
+	git checkout v0.1s
 
 #identifica as diferençcas entre versões
-git diff v0.1 v0.2 
+	git diff v0.1 v0.2 
 
 #mostra a alteração , data , pessoa , linhas alteradas
-git blame nomearquivo
+	git blame nomearquivo
 
 #copiar o diretorio 
-git clone [https://url]
+	git clone [https://url]
 
 ---------------------3. Sincronizacao dos dados com o repositorio
 
@@ -123,6 +123,89 @@ git push origin :branchname
 
 #trocando de branch
 git checkout branchname
+
+------------------- 5 - Resolucao de conflitos 
+
+	#Quando ocorre um merge, o git automaticamente trata linhas com diferenças facilitando o merge
+	# quando ocorre um conflito, aparecerá uma mensagem no sincronismo informando isso a correçao deverá ser feita no arquivo com a seguinte regra:
+
+	#entre <<< e ===== alteração feita externamente
+	#entre >>>> e ==== conteudo que conflitou
+	#o valor exadecimal depois do >>>> é o identificador do commit que ocorreu o conflito
+
+	#apos a alteracao e salvar o arquivo o padráo normal ocorre
+	git commit
+
+6. boas paraticas no uso do git
+	#usar o branch
+	
+	#criar branch pessoal
+		git checktout -b meubranch
+	#alterar 
+		git add nomeitem
+		git commit -m 'primeiro commit' nomedoitem
+	
+	#Fazendo merge dos comits do repositorio, já que no respositorio não existem esses branchs
+	#Mudar para branch marster
+		git checkout master
+	#pegando as alterações e já trazendo para o repositório
+		git pull 
+	#fazendo o merge da sua branch ao branch em que você está
+	#lembre-se que vc está no branch master do repositorio remoto
+	
+	#tras as alterações da branch para a atual
+		git merge nomedabranch
+	
+	#enviar as alterações para o site
+		git push
+	
+	#atualiza uma branch com base em outra branch, fazendo com que ela siga a sequencia de commits originais encaixando os com a nova
+	#por exemplo, vc quer pegar as alterações de outra branch e aloca-las para a sua
+	# sem fazer o merge pq vc não quer faze-los
+		git rebase
+		git rebase origembranch destinoBranch
+	# trazendo as alterações par ao master
+		git merge
+	# enviando para o servidor
+		git push
+	#continua de onde parou 
+		git rebase --continue
+
+
+
+7. controle avançado de alterações
+	# voltando ao ultimo estado que estava no diretório
+		# estado de só add
+		git checkout propost_1.htm.
+	
+		#tirar do status index
+		git reset HEAD nomearquivo
+		
+		#reverter do commit
+		#usar o hash do commit para desfazer  e será defeito todos acima dele, usado localmente, remotamente não é legal
+		git reset hashDocomit
+		
+		# ou por numero sem importar com o hash, no exemplo reseta para o antepenúltimo commit
+		git reset HEAD~2 
+		
+		#voltar uma alteração
+		git revert hashdocomit
+		
+		#coloca as alterações no cash para alteração 
+		git stash
+		#ver o que está em cash
+		git stash list
+		# pegar o ultimo comando
+		git stash pop
+		# pegar o stash mais antigo usa-se a sua referencia
+		git stash pop stash@{1}
+		#pesquisando commits
+		git bitsect start
+	
+	#observaoces gerais
+	
+		#vc consegue ter seu ambiente construido usando o hash commit feito
+		git chekcout hashdocomit
 
 -------------------8 - contribuicao com opensource(iteragindo com github de outros)
 
