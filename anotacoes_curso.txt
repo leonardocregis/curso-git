@@ -209,15 +209,51 @@ git checkout branchname
 
 -------------------8 - contribuicao com opensource(iteragindo com github de outros)
 
-#importando projetos para edicao 
-# ir no github , e executar um fork do projeto, que automaticamente cria uma copia do usuario que requisitou do projeto
-# depois usando a url do projeto vc poderá fazer o git clone 
-git clone [url do seu projeto com fork]
+	#importando projetos para edicao 
+	# ir no github , e executar um fork do projeto, que automaticamente cria uma copia do usuario que requisitou do projeto
+	# depois usando a url do projeto vc poderá fazer o git clone 
+	git clone [url do seu projeto com fork]
+	
+	#configurar um apontamento para o projeto original
+	git remote add original [url]
+	
+	#quando for atualizar com as alterações do original, usar o comando fetch
+	git fetch original
+	
+	#para fazer o merge das alterações feitas pelo fetch , usar o merge
+	git merge original/master
+	
+	#sobre o pull request : processo em que vc solicita que suas alterações sejam integradas à outro repositório
+	# se ocorrer algo errado o pull request cria no diretorio https://github.com/[dono_do_projeto]/[projeto]/pull/[id_do_pull_request].
+	
+	
+	
+	#usando alias, configurado no arquivo .gitconfig
+		vi ~/.gitconfig
+		#adicionar no arquivo acima o alias na seguinte formatacao
+		[alias]
+		  st = status
+		
+		#usando commandos encadeados
+		[alias]
+		  envia = !git checkout master && !git pull && !git checkout desenvolvimento && !git rebase master && !git checkout master && !git merge desenvolvimento && git push
+		
+	#adicionando cores, usando o mesmo arquivo .gitconfig
+		[color]
+  			diff = auto
 
-
-
-#usando alias
-vi ~/.gitconfig
-
-#log
-g 
+	#visualizando log
+		#visualizando detalhes das alterações
+		git log -p
+		
+		#exibir a quantidade de linhas alteradas
+		git log --stat
+		
+		# varias maneiras de exibir informações no log escolher uma das entre virgulas
+		git log --pretty=[neline, short, medium, full, fuller, email, raw]
+		
+		#formatando o --pretty 
+		log --pretty='%an realizou commit em %ad: %s'
+		
+		#exibindo um grafico que auxilia
+		log --grath
