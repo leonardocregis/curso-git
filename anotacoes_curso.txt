@@ -257,3 +257,23 @@ git checkout branchname
 		
 		#exibindo um grafico que auxilia
 		log --grath
+
+-------- 9 merge avançado com cherry pick
+
+	# ferramenta em que vc pode pegar parte de commits e construir um comit final so com amostragens, a ideia é como se fosse um pedaço de torda (cherry pick)
+	
+	#uso , pegando os commits , no caso depois que vc quer adicionar à sua branch
+	#		2 - 3 - 4 = master
+	#	1 - 
+	#		5 - 6 - 7 = work
+	
+	git cherry-pick 4
+	
+	# 		2 - 3 - 4 = master
+	#	1 - 
+	#		5 - 6 - 4 = work
+	
+	# podemos fazer o mesmo usando o hash do arquivo
+	git cherry-pick [hash]
+	
+	
